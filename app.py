@@ -75,7 +75,7 @@ async def start(_, message: Message):
 			text=f"""
 🚧 **ᴀᴄᴄᴇss ᴅᴇɴɪᴇᴅ** {message.from_user.mention}
 You must,
-🔹[ᴊᴏɪɴ ᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ](fhttps://t.me/{CHANNEL}).
+🔹[ᴊᴏɪɴ ᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ](https://t.me/tamilbots).
 """)
        return
     name = message.from_user.id
