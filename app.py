@@ -46,7 +46,7 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @ImDenuwan | @szteambots 
+**Developer** : @AboutMK | @TamilBota
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -56,11 +56,11 @@ OWNER = int(os.environ['OWNER'])
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/slbotzone"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/szteambots")
+                    InlineKeyboardButton("Gʀᴏᴜᴘ", url="https://t.me/tamilsupport"),
+                    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/tamilbots")
                 ],
 		        [
-                    InlineKeyboardButton("➕Add to Group ➕", url=f"http://t.me/szFakeMailBot?startgroup=new"),
+                    InlineKeyboardButton("Aᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"http://t.me/szFakeMailBot?startgroup=new"),
                 ]    
             ]
 )
@@ -73,10 +73,9 @@ async def start(_, message: Message):
        await app.send_message(
 			chat_id=message.from_user.id,
 			text=f"""
-🚧 **Access Denied** {message.from_user.mention}
+🚧 **ᴀᴄᴄᴇss ᴅᴇɴɪᴇᴅ** {message.from_user.mention}
 You must,
-🔹[join Our Telegram Channel](fhttps://t.me/{CHANNEL}).
-@szteambots
+🔹[ᴊᴏɪɴ ᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ](fhttps://t.me/{CHANNEL}).
 """)
        return
     name = message.from_user.id
@@ -100,7 +99,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("SZ team bots 🇱🇰", url="https://t.me/szteambots")]])
+            [[InlineKeyboardButton("𝙏𝙖𝙢𝙞𝙡 𝘽𝙤𝙩𝙨", url="https://t.me/szteambots")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -115,10 +114,10 @@ async def fakemailgen(_, message: Message):
     mes = await app.send_message(
     name, 
     text = f"""
-**📬Done,Your Email Address Created!**
-📧 **Email** : `{email}@{domain}`
-📨 **Mail BOX** : `empty`
-**Powered by** : @szteambots """,
+**📬ᴅᴏɴᴇ,ʏᴏᴜʀ ᴇᴍᴀɪʟ ᴀᴅᴅʀᴇss ᴄʀᴇᴀᴛᴇᴅ!**
+📧 **ᴇᴍᴀɪʟ** : `{email}@{domain}`
+📨 **ᴍᴀɪʟ ʙᴏx** : `empty`
+**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @ """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
