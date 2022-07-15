@@ -36,17 +36,17 @@ app = Client(
 
 #********************************************************************************
 start_text = """
-Hello! {}, 
-I can create **temp emails** for you. Send /new to **create new mail** !
+ʜᴇʟʟᴏ [👋](https://telegra.ph/file/57873ee2279555866f4c9.jpg) ! {}, 
+ɪ ᴄᴀɴ ᴄʀᴇᴀᴛᴇ **ᴛᴇᴍᴘ ᴇᴍᴀɪʟs** ғᴏʀ ʏᴏᴜ. Sᴇɴᴅ /new ᴛᴏ **ᴄʀᴇᴀᴛᴇ ɴᴇᴡ ᴍᴀɪʟ** !
 
-**Advantages**
-   • None Blacklisted Domains(Fresh Domains).
-   • [API](https://www.1secmail.com/api/v1/) base Email box .
-   • 24 hours Active (paid hosting).
+**ᴀᴅᴠᴀɴᴛᴀɢᴇs**
+   • ɴᴏɴᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴅᴏᴍᴀɪɴs(ғʀᴇsʜ ᴅᴏᴍᴀɪɴs).
+   • [ᴀᴘɪ](https://www.1secmail.com/api/v1/) ʙᴀsᴇ ᴇᴍᴀɪʟ ʙᴏx .
+   • 24 ʜᴏᴜʀs ᴀᴄᴛɪᴠᴇ  (ᴘᴀɪᴅ ʜᴏsᴛɪɴɢ).
 
-Send /domains to get list of Available Domains.
+Sᴇɴᴅ /domains ᴛᴏ ɢᴇᴛ ʟɪsᴛ ᴏғ ᴀᴠᴀɪʟᴀʙᴇ ᴅᴏᴍᴀɪɴs.
 
-**Developer** : @AboutMK | @TamilBota
+**ᴅᴇᴠᴇʟᴏᴘᴇʀ** : @AboutMK | @TamilBot
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -99,7 +99,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("𝙏𝙖𝙢𝙞𝙡 𝘽𝙤𝙩𝙨", url="https://t.me/szteambots")]])
+            [[InlineKeyboardButton("𝙏𝙖𝙢𝙞𝙡 𝘽𝙤𝙩𝙨", url="https://t.me/tamilbots")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -117,7 +117,7 @@ async def fakemailgen(_, message: Message):
 **📬ᴅᴏɴᴇ,ʏᴏᴜʀ ᴇᴍᴀɪʟ ᴀᴅᴅʀᴇss ᴄʀᴇᴀᴛᴇᴅ!**
 📧 **ᴇᴍᴀɪʟ** : `{email}@{domain}`
 📨 **ᴍᴀɪʟ ʙᴏx** : `empty`
-**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @ """,
+**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @TamilBots """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -134,7 +134,7 @@ async def gen_keyboard(mails, email, domain):
         )
         num += 1
     data.append(
-        InlineKeyboardButton(f"♻️ Update Mail BOX ♻️", f"mailbox |{email}|{domain}")
+        InlineKeyboardButton(f"♻️ ᴜᴘᴅᴀᴛᴇ ᴍᴀɪʟ ʙᴏx ♻️", f"mailbox |{email}|{domain}")
     )
     i_kbd.add(*data)
     return i_kbd
@@ -154,14 +154,14 @@ async def mail_box(_, query : CallbackQuery):
             smail = f"{email}@{domain}"
             mbutton = await gen_keyboard(mails,email, domain)
             await query.message.edit(f""" 
-**📬Done,Your Email Address Created!**
-📧 **Email** : `{smail}`
-📨 **Mail BOX** : ✅
-**Powered by** : @szteambots""",
+**📬ᴅᴏɴᴇ,ʏᴏᴜʀ ᴍᴀɪʟ ᴀᴅᴅʀᴇss ᴄʀᴇᴀᴛᴇᴅ!**
+📧 **ᴇᴍᴀɪʟ** : `{smail}`
+📨 **ᴍᴀɪʟ ʙᴏx** : ✅
+**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @Tamilmbots""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
-            await query.answer("🤷‍♂️ No New Mails found! 🤷‍♂️")
+            await query.answer("🤷‍♂️ ɴᴏ ɴᴇᴡ ᴍᴀɪʟ ᴄʀᴇᴀᴛᴇᴅ! 🤷‍♂️")
 
 #********************************************************************************
 
