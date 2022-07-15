@@ -60,7 +60,7 @@ start_button = InlineKeyboardMarkup(
                     InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/tamilbots")
                 ],
 		        [
-                    InlineKeyboardButton("Aᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"http://t.me/szFakeMailBot?startgroup=new"),
+                    InlineKeyboardButton("Aᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"http://t.me/FakeMailxroBot?startgroup=new"),
                 ]    
             ]
 )
@@ -105,7 +105,7 @@ create = InlineKeyboardMarkup(
 @app.on_message(filters.command("new"))
 async def fakemailgen(_, message: Message):
     name = message.from_user.id
-    m =  await app.send_message(name,text=f"📧 Creating  temp email....",reply_markup = create)
+    m =  await app.send_message(name,text=f"📧 ᴄʀᴇᴀᴛɪɴɢ ᴛᴇᴍᴘ ᴍᴀɪʟ....",reply_markup = create)
     rp = RandomWord(max_word_size=8, include_digits=True)
     email = rp.generate()
     xx = requests.get(API1).json()
@@ -118,7 +118,7 @@ async def fakemailgen(_, message: Message):
 📧 **ᴇᴍᴀɪʟ** : `{email}@{domain}`
 📨 **ᴍᴀɪʟ ʙᴏx** : `empty`
 **ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @TamilBots """,
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ ᴜᴘᴅᴀᴛᴇ ᴍᴀɪʟ ʙᴏx ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
     await pi.delete()
@@ -148,7 +148,7 @@ async def mail_box(_, query : CallbackQuery):
     m, email , domain = callback_request.split("|")
     mails = requests.get(f'{API2}{email}&domain={domain}').json()
     if mails == []:
-            await query.answer("🤷‍♂️ No Mails found! 🤷‍♂️")
+            await query.answer("🤷‍♂️ ɴᴏ ɴᴇᴡ ᴍᴀɪʟ ᴄʀᴇᴀᴛᴇᴅ! 🤷‍♂️")
     else:
         try:
             smail = f"{email}@{domain}"
@@ -157,7 +157,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬ᴅᴏɴᴇ,ʏᴏᴜʀ ᴍᴀɪʟ ᴀᴅᴅʀᴇss ᴄʀᴇᴀᴛᴇᴅ!**
 📧 **ᴇᴍᴀɪʟ** : `{smail}`
 📨 **ᴍᴀɪʟ ʙᴏx** : ✅
-**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @Tamilmbots""",
+**ᴘᴏᴡᴇʀᴇᴅ ʙʏ** : @TamilBots""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
