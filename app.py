@@ -46,7 +46,7 @@ start_text = """
 
 Sᴇɴᴅ /domains ᴛᴏ ɢᴇᴛ ʟɪsᴛ ᴏғ ᴀᴠᴀɪʟᴀʙᴇ ᴅᴏᴍᴀɪɴs.
 
-**ᴅᴇᴠᴇʟᴏᴘᴇʀ** : @AboutMK | @TamilBot
+**ᴅᴇᴠᴇʟᴏᴘᴇʀ** : @TamilBot | @AboutMK
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -60,7 +60,7 @@ start_button = InlineKeyboardMarkup(
                     InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/tamilbots")
                 ],
 		        [
-                    InlineKeyboardButton("Aᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"http://t.me/FakeMailxroBot?startgroup=new"),
+                    InlineKeyboardButton("Aᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"http://t.me/tempMailxroBot?startgroup=new"),
                 ]    
             ]
 )
